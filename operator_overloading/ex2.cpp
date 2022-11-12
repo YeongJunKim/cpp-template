@@ -11,29 +11,21 @@
 
 #include <iostream>
 
-template <typename T> class MyClass
-{
-  private:
-    T _data;
+template <typename T> class MyClass {
+private:
+  T _data;
 
-  public:
-    MyClass(T data) : _data(data)
-    {
-    }
-    T getData() const
-    {
-        return _data;
-    }
-    MyClass operator+(const MyClass &object) const
-    {
-        return MyClass(getData() + object.getData());
-    }
+public:
+  MyClass(T data) : _data(data) {}
+  T getData() const { return _data; }
+  MyClass operator+(const MyClass &object) const {
+    return MyClass(getData() + object.getData());
+  }
 };
-int main(int argc, char *argv[])
-{
-    MyClass<int> first{1};
-    MyClass<int> second{5};
+int main(int argc, char *argv[]) {
+  MyClass<int> first{1};
+  MyClass<int> second{5};
 
-    MyClass<int> third = first + second;
-    return 0;
+  MyClass<int> third = first + second;
+  return 0;
 }

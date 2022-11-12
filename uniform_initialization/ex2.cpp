@@ -11,17 +11,15 @@
 
 #include <iostream>
 
-void func(int i)
-{ /* ... */
+void func(int i) { /* ... */
 }
 
-int main(int argc, char *argv[])
-{
-    int x = 1.2345;
-    func(1.1234);
+int main(int argc, char *argv[]) {
+  int x = 1.2345;
+  func(1.1234);
 
-    // Error
-    // int x1 = {1.2345};
-    // func({1.1234});
-    return 0;
+  // Error
+  // int x1 = {1.2345};
+  // func({1.1234});
+  return 0;
 }
