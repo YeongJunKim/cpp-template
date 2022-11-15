@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5.0)
+cmake_minimum_required(VERSION 3.11.0)
 
 project(logger)
 
@@ -11,7 +11,6 @@ set(${PROJECT_NAME}_main_sources
 )
 
 find_package(Boost COMPONENTS system filesystem REQUIRED)
-
 
 add_executable(${PROJECT_NAME}_main ${${PROJECT_NAME}_main_sources})
 target_include_directories(${PROJECT_NAME}_main PUBLIC ./)

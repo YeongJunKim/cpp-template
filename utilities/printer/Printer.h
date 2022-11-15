@@ -4,9 +4,9 @@
  * @brief Beautiful printer
  * @version 0.1
  * @date 2022-01-30
- * 
+ *
  * @copyright Copyright (c) 2022
- * 
+ *
  */
 
 #ifndef __PRINTER__
@@ -37,52 +37,25 @@
 #define BOLD(x) "\x1B[1m" x RST
 #define UNDL(x) "\x1B[4m" x RST
 
-namespace utilties
-{
-enum LogLevel
-{
-    DEBUG = 0,
-    INFO = 1,
-    WARN = 2,
-    ERROR = 3,
-    CRITIAL = 4,
+namespace utilties {
+enum LogLevel {
+  DEBUG = 0,
+  INFO = 1,
+  WARN = 2,
+  ERROR = 3,
+  CRITIAL = 4,
 };
 
-class Printer
-{
-  public:
-    Printer(LogLevel level) : _level(level)
-    {
-        switch (level)
-        {
-        case DEBUG:
-            _prefix << "[" << FGRN("DEBUG") << "]";
-            break;
-        case INFO:
-            _prefix << "[" << FMAG("INFO") << "]";
-            break;
-        case WARN:
-            _prefix << "[" << FYEL("WARN") << "]";
-            break;
-        case ERROR:
-            _prefix << "[" << FRED("ERROR") << "]";
-            break;
-        case CRITIAL:
-            _prefix << "[" << FCYN("CRITICAL") << "]";
-            break;
-        }
-    }
+class Printer {
+public:
+  Printer(LogLevel level);
 
-  private:
-    LogLevel _level;
-    std::stringstream _prefix;
+private:
+  LogLevel _level;
+  std::stringstream _prefix;
 
-  public:
-    void log(std::string whrere, std::stringstream stream)
-    {
-        std::cout << _prefix.str() << ", From: [" << whrere << "]"
-                  << ", Message " << stream.str() << std::endl;
-    }
+public:
+  void log(std::string where, std::stringstream stream);
 };
 } // namespace utilties
 

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5.0)
+cmake_minimum_required(VERSION 3.11.0)
 
 set(CMAKE_CXX_STANDARD_REQUIRED 17)
 
