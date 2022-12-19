@@ -1,5 +1,11 @@
 cmake_minimum_required(VERSION 3.11.0)
 
+
+message(STATUS "Compiler")
+message(STATUS " -D       \t: ${CMAKE_CXX_COMPILER_ID}")
+message(STATUS " -Version \t: ${CMAKE_CXX_COMPILER_VERSION}")
+message(STATUS " -Path    \t: ${CMAKE_CXX_COMPILER}")
+
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -10,7 +16,6 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 project(c_cpp_examples)
-
 
 add_subdirectory(utilities)
 

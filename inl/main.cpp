@@ -11,7 +11,7 @@
 
 #include "csl/core/Core.h"
 #include "csl/time/Tick.h"
-#include <Printer.h>
+#include <csl/printer/inc/Printer.h>
 #include <iostream>
 #include <sstream>
 
